@@ -1,0 +1,25 @@
+<h1>Show</h1>
+
+<%=@list.name%>
+
+<%= link_to "bookmarks", new_list_bookmark_path(@list)%>
+
+<%= link_to "Delete #{@list.name}",
+            list_path(@list),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <%= bookmark.movie.rating %>
+  <%= bookmark.movie.poster_url%>
+  <%= image_tag "", alt: "", width: 200 %>
+  <%= bookmark.comment %>
+<% end %>
+
+<%= link_to "Delete #{@list.bookmarks}",
+            bookmark_path(@list),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+<p> <%= link_to 'Back to Lists', lists_path%> </p>
