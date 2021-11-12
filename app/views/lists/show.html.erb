@@ -2,24 +2,25 @@
 
 <%=@list.name%>
 
+<br>
 <%= link_to "bookmarks", new_list_bookmark_path(@list)%>
 
+<br>
 <%= link_to "Delete #{@list.name}",
             list_path(@list),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
 
+<br>
 <% @list.bookmarks.each do |bookmark| %>
   <%= bookmark.movie.title %>
   <%= bookmark.movie.rating %>
-  <%= bookmark.movie.poster_url%>
-  <%= image_tag "", alt: "", width: 200 %>
+  <%= bookmark.movie.poster_url %>
   <%= bookmark.comment %>
-<% end %>
-
-<%= link_to "Delete #{@list.bookmarks}",
-            bookmark_path(@list),
+  <%= link_to "Delete",
+            bookmark_path(bookmark),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+<% end %>
 
 <p> <%= link_to 'Back to Lists', lists_path%> </p>
