@@ -6,7 +6,7 @@
 <%= link_to "bookmarks", new_list_bookmark_path(@list)%>
 
 <br>
-<%= link_to "Delete #{@list.name}",
+<%= link_to "Delete list",
             list_path(@list),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
@@ -17,7 +17,7 @@
   <%= bookmark.movie.rating %>
   <%= bookmark.movie.poster_url %>
   <%= bookmark.comment %>
-  <%= link_to "Delete",
+  <%= link_to "Delete bookmark",
             bookmark_path(bookmark),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
