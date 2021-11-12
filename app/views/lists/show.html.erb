@@ -23,4 +23,9 @@
             data: { confirm: "Are you sure?" } %>
 <% end %>
 
+<br>
+<% @list.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill %>
+<% end %>
+
 <p> <%= link_to 'Back to Lists', lists_path%> </p>
