@@ -1,23 +1,27 @@
-<h1>Index List</h1>
+<div>
+    <h1>Welcome to <strong> Popcorn</strong> <em>station !</em></h1>
+    <p>Enjoy your life and choose one of our movie favorite as your <em>date</em>.</p>
+    <%= link_to "Create List", new_list_path, class: "btn btn-ghost" %>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div>
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+  </ul>
+</div>
 
-<br>
-<%= cl_image_tag("axbggbeefhdmxeeyeaxp",
-      width: 300, height: 300, crop: :fill) %>
+<div>
+  <%= cl_image_tag("axbggbeefhdmxeeyeaxp",
+        width: 300, height: 400, crop: :fill) %>
 
-<%= cl_image_tag("ouayrnzkbqwtosz7ndrm",
-      width: 300, height: 300, crop: :fill) %>
+  <%= cl_image_tag("ouayrnzkbqwtosz7ndrm",
+        width: 300, height: 400, crop: :fill) %>
 
-<%= cl_image_tag("pmm8imonbt1f4jehq7pz",
-      width: 300, height: 300, crop: :fill) %>
+  <%= cl_image_tag("pmm8imonbt1f4jehq7pz",
+        width: 300, height: 400, crop: :fill) %>
 
-<%= cl_image_tag("v3gfzktkn0yoeaunx4wf",
-      width: 300, height: 300, crop: :fill) %>
-
-<br>
-<%= link_to "Create List", new_list_path %>
+  <%= cl_image_tag("v3gfzktkn0yoeaunx4wf",
+        width: 300, height: 400, crop: :fill) %>
+</div>
